@@ -4,19 +4,30 @@
 
 <html>
     <head>
-        <title>Revkom Website</title>
+        <title>Rango</title>
     </head>
 
-    <body style="background-color: goldenrod">
-        <h1>Lenin says...</h1>
+    <body>
+        <h1>Rango says...</h1>
         <div>
-            Hey there comrade! <br />
+            hey there partner! <br />
             <strong>{{ boldmessage }}</strong><br />
         </div>
         <div>
+            {% if categories %}
+                <ul>
+                    {% for category in categories %}
+                    <li>{{ category.name }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <strong>There are no categories present.</strong>
+            {% endif %}
+        </div>
+
+        <div>
             <a href="/rango/about/">About</a><br />
-            <img src="{% static 'images/template_pic.jpg' %}"
-                 alt="Picture" />
+            <img src="{% static 'images/rango.jpg' %}" alt="Picture of Rango" />
         </div>
     </body>
 
